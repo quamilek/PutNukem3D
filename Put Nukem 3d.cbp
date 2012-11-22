@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Put Nukem 3d" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Put Nukem 3d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Put Nukem 3d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libmingw32.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libSDL.dll.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libSDLmain.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libfmodex.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglaux.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglu32.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglut32win.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libgdi32.a" />
+		</Linker>
+		<Unit filename="GlobalTimer.cpp" />
+		<Unit filename="GlobalTimer.h" />
+		<Unit filename="InputTask.cpp" />
+		<Unit filename="InputTask.h" />
+		<Unit filename="Kernel.cpp" />
+		<Unit filename="Kernel.h" />
+		<Unit filename="Log.cpp" />
+		<Unit filename="Log.h" />
+		<Unit filename="ProfileLogHandler.cpp" />
+		<Unit filename="ProfileLogHandler.h" />
+		<Unit filename="Put Nukem 3d.layout" />
+		<Unit filename="Settings.cpp" />
+		<Unit filename="Settings.h" />
+		<Unit filename="SoundTask.cpp" />
+		<Unit filename="SoundTask.h" />
+		<Unit filename="VideoUpdate.cpp" />
+		<Unit filename="VideoUpdate.h" />
+		<Unit filename="dator.h" />
+		<Unit filename="engine.h" />
+		<Unit filename="engine.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="functor.h" />
+		<Unit filename="game.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="misc.h" />
+		<Unit filename="mmanager.cpp" />
+		<Unit filename="mmanager.h" />
+		<Unit filename="profiler.cpp" />
+		<Unit filename="profiler.h" />
+		<Unit filename="resource.h" />
+		<Unit filename="ringbuf.h" />
+		<Unit filename="singleton.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

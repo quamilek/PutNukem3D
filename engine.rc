@@ -1,0 +1,89 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NO_ERROR            "No error."
+    IDS_UNRELEASED_OBJECT   "Unreleased MMObject at %#X, length %u bytes, first bytes ""%.10s"""
+    IDS_CANT_CONNECT        "Cannot connect to %#X on port %i using %s; net error ""%s"""
+    IDS_UNHANDLED_MESSAGE   "A message with code %i could not be handled by the %s."
+    IDS_CANT_SERVE          "Cannot open server socket on port %i using %s; net error ""%s"""
+    IDS_SERVER_SOCKET_OPEN  "Opened a server socket on port %i using %s."
+    IDS_TRANSMIT_FAIL       "Only sent %i bytes of a %i byte message. Net error: ""%s."""
+    IDS_CLIENT_SOCKET_OPEN  "Opened a connection to %#X:%i over %s"
+    IDS_GENERIC_SUB_INIT_FAIL 
+                            "The ""%s"" game subsystem could not be started, because of an error (""%s"")."
+    IDS_BAD_DISPLAYMODE     "The specified display mode (%ix%ix%i) seems to be unusable (""%s"")."
+    IDS_PROFILE_HEADER1     "  Min :   Avg :   Max :   Time:  # : Profile Name (this loop: %2.5f seconds, %3.1f FPS)"
+    IDS_PROFILE_HEADER2     "--------------------------------------------"
+    IDS_PROFILE_SAMPLE      "%5s : %5s : %5s : %5s : %3s : %s"
+    IDS_TEXTURE_LOAD_FAILED "Couldn't load texture %s (texture name %s)."
+    IDS_TEXTURE_FIND_FAILED "Couldn't find texture ""%s""."
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
