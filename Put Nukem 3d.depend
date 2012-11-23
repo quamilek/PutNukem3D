@@ -135,3 +135,139 @@
 	"engine.h"
 	"profiler.h"
 
+1052218780 source:c:\users\buka\documents\github\putnukem3d\globaltimer.cpp
+	"engine.h"
+	"GlobalTimer.h"
+
+1353597290 c:\users\buka\documents\github\putnukem3d\engine.h
+	<iostream>
+	<ostream>
+	<istream>
+	<fstream>
+	<list>
+	<string>
+	<map>
+	<deque>
+	<vector>
+	<stack>
+	<algorithm>
+	<functional>
+	<cassert>
+	<sstream>
+	<cmath>
+	<ctime>
+	<windows.h>
+	"resource.h"
+	<sdl/sdl.h>
+	<sdl/sdl_net.h>
+	<sdl/sdl_image.h>
+	<sdl/sdl_ttf.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<fmod.h>
+	"log.h"
+	"mmanager.h"
+	"singleton.h"
+	"functor.h"
+	"dator.h"
+	"kernel.h"
+	"settings.h"
+	"profiler.h"
+	"profileloghandler.h"
+	"videoupdate.h"
+	"globalTimer.h"
+	"inputtask.h"
+	"soundtask.h"
+	"misc.h"
+	"math.h"
+
+1056040440 c:\users\buka\documents\github\putnukem3d\resource.h
+
+1052218728 c:\users\buka\documents\github\putnukem3d\log.h
+	"engine.h"
+	"mmanager.h"
+
+1353594208 c:\users\buka\documents\github\putnukem3d\mmanager.h
+	"engine.h"
+
+1054310306 c:\users\buka\documents\github\putnukem3d\singleton.h
+
+1053646444 c:\users\buka\documents\github\putnukem3d\functor.h
+	"mmanager.h"
+
+1058092542 c:\users\buka\documents\github\putnukem3d\dator.h
+	"mmanager.h"
+
+1353596422 c:\users\buka\documents\github\putnukem3d\kernel.h
+	"singleton.h"
+
+1353595611 c:\users\buka\documents\github\putnukem3d\settings.h
+	"singleton.h"
+	"dator.h"
+
+1056377072 c:\users\buka\documents\github\putnukem3d\profiler.h
+
+1053602636 c:\users\buka\documents\github\putnukem3d\profileloghandler.h
+	"profiler.h"
+
+1056030870 c:\users\buka\documents\github\putnukem3d\videoupdate.h
+	"engine.h"
+
+1051255832 c:\users\buka\documents\github\putnukem3d\globaltimer.h
+	"engine.h"
+
+1059164442 c:\users\buka\documents\github\putnukem3d\inputtask.h
+	"engine.h"
+
+1052765820 c:\users\buka\documents\github\putnukem3d\soundtask.h
+	"Kernel.h"
+
+1353594676 c:\users\buka\documents\github\putnukem3d\misc.h
+	<algorithm>
+
+1059164472 source:c:\users\buka\documents\github\putnukem3d\inputtask.cpp
+	"InputTask.h"
+
+1353596422 source:c:\users\buka\documents\github\putnukem3d\kernel.cpp
+	"engine.h"
+	"Kernel.h"
+
+1056040778 source:c:\users\buka\documents\github\putnukem3d\log.cpp
+	"engine.h"
+	"Log.h"
+
+1053602854 source:c:\users\buka\documents\github\putnukem3d\profileloghandler.cpp
+	"engine.h"
+	"ProfileLogHandler.h"
+
+1353595585 source:c:\users\buka\documents\github\putnukem3d\settings.cpp
+	"engine.h"
+	"settings.h"
+
+1353596334 source:c:\users\buka\documents\github\putnukem3d\soundtask.cpp
+	"engine.h"
+
+1060381468 source:c:\users\buka\documents\github\putnukem3d\videoupdate.cpp
+	"engine.h"
+	"VideoUpdate.h"
+
+1055692834 source:c:\users\buka\documents\github\putnukem3d\engine.rc
+	"resource.h"
+	"afxres.h"
+
+1353596676 source:c:\users\buka\documents\github\putnukem3d\main.cpp
+	"engine.h"
+	"game.h"
+
+1058625666 c:\users\buka\documents\github\putnukem3d\game.h
+	"engine.h"
+
+1353596592 source:c:\users\buka\documents\github\putnukem3d\mmanager.cpp
+	"engine.h"
+	<algorithm>
+
+1054488284 source:c:\users\buka\documents\github\putnukem3d\profiler.cpp
+	"engine.h"
+	"profiler.h"
+
