@@ -40,6 +40,9 @@
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglu32.a" />
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglut32win.a" />
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libgdi32.a" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="glut32" />
 		</Linker>
 		<Unit filename="GlobalTimer.cpp" />
 		<Unit filename="GlobalTimer.h" />
