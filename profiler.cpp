@@ -87,7 +87,7 @@ void CProfileSample::Output()
 	if(!bProfilerIsRunning)return;
 
 	assert(outputHandler && "Profiler has no output handler set");
-	
+
 	outputHandler->BeginOutput(rootEnd-rootBegin);
 
 	for(int i=0;i<MAX_PROFILER_SAMPLES; ++i)
@@ -108,7 +108,8 @@ void CProfileSample::Output()
 			if((samples[i].maxPc==-1)||(percentage>samples[i].maxPc))samples[i].maxPc=percentage;
 
 			//output these values
-			outputHandler->Sample(samples[i].minPc,
+			outputHandler->Sample(/*rootEnd - rootBegin,*/
+                          samples[i].minPc,
 					      samples[i].averagePc,
 					      samples[i].maxPc,
 					      sampleTime,
@@ -140,7 +141,7 @@ void CProfileSample::ResetSample(std::string strName)
 			return;
 		}
 	}
-}	
+}
 
 void CProfileSample::ResetAll()
 {

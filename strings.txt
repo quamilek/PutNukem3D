@@ -1,0 +1,15 @@
+No error.
+Unreleased MMObject at %#X, length %u bytes, first bytes "%.10s"
+Cannot connect to %#X on port %i using %s; net error "%s"
+A message with code %i could not be handled by the %s.
+Cannot open server socket on port %i using %s; net error "%s"
+Opened a server socket on port %i using %s.
+Only sent %i bytes of a %i byte message. Net error: "%s".
+Opened a connection to %#X:%i over %s
+The ""%s"" game subsystem could not be started, because of an error ("%s").
+The specified display mode (%ix%ix%i) seems to be unusable ("%s").
+  Min :   Avg :   Max :   Time:  # : Profile Name (this loop: %2.5f seconds, %3.1f FPS)
+--------------------------------------------
+%5s : %5s : %5s : %5s : %3s : %s
+Couldn't load texture %s (texture name %s).
+Couldn't find texture ""%s"".

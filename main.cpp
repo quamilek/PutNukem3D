@@ -1,6 +1,8 @@
 #include "engine.h"
 #include "game.h"
 
+
+
 class CPongTask : public ITask
 {
 public:
@@ -11,6 +13,8 @@ public:
 
 	bool Start()
 		{
+
+
 			InitRandomNumbers();
 
 			glMatrixMode(GL_PROJECTION);
@@ -30,10 +34,12 @@ public:
 			ballVY=(float)(rand()%20-10)/20;
 			ballSize=0.01f;
 
+
 			return true;
 		}
 	void Update()
 		{
+		    PROFILE("PongTask Update");
 			glClear(GL_COLOR_BUFFER_BIT);
 			if(CInputTask::mouseDown(SDL_BUTTON_LEFT))CKernel::GetSingleton().KillAllTasks();
 
@@ -104,6 +110,7 @@ void CApplication::Run(int argc, char *argv[])
 	//open logfiles
 	if(!CLog::Get().Init())return;
 
+
 	//create a couple of singletons
 	new CSettingsManager();
 	new CKernel();
@@ -144,6 +151,8 @@ void CApplication::Run(int argc, char *argv[])
 	//main game loop
 	CKernel::GetSingleton().Execute();
 
+    CProfileSample::Output();
+
 	//clean up singletons
 	delete CKernel::GetSingletonPtr();
 	delete CSettingsManager::GetSingletonPtr();
@@ -155,6 +164,8 @@ int main(int argc, char *argv[])
 	new CApplication();
 	CApplication::GetSingleton().Run(argc,argv);
 	delete CApplication::GetSingletonPtr();
+
+
 
 	//clean up any remaining unreleased objects
 	IMMObject::CollectRemainingObjects(true);

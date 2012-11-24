@@ -23,15 +23,18 @@ CKernel::~CKernel()
 
 int CKernel::Execute()
 {
+    PROFILE("Kernel execute");
 
 	while(taskList.size())
 	{
-		{
-			PROFILE("Kernel task loop");
+
+
 
 			std::list< CMMPointer<ITask> >::iterator it, thisIt;
+
 			for(it=taskList.begin();it!=taskList.end();)
 			{
+
 				ITask *t=(*it);
 				it++;
 				if(!t->canKill)t->Update();
@@ -49,13 +52,14 @@ int CKernel::Execute()
 					t=0;
 				}
 			}
-			IMMObject::CollectGarbage();
-		}
-#ifdef _DEBUG
-		CProfileSample::Output();
-#endif
-	}
 
+			IMMObject::CollectGarbage();
+
+
+	}
+    //#ifdef _DEBUG
+                //CProfileSample::Output();
+            //#endif
 	return 0;
 }
 

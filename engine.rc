@@ -27,18 +27,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE DISCARDABLE
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE DISCARDABLE
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE DISCARDABLE
 BEGIN
     "\r\n"
     "\0"
@@ -52,7 +52,7 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_NO_ERROR            "No error."
     IDS_UNRELEASED_OBJECT   "Unreleased MMObject at %#X, length %u bytes, first bytes ""%.10s"""
@@ -62,12 +62,12 @@ BEGIN
     IDS_SERVER_SOCKET_OPEN  "Opened a server socket on port %i using %s."
     IDS_TRANSMIT_FAIL       "Only sent %i bytes of a %i byte message. Net error: ""%s."""
     IDS_CLIENT_SOCKET_OPEN  "Opened a connection to %#X:%i over %s"
-    IDS_GENERIC_SUB_INIT_FAIL 
+    IDS_GENERIC_SUB_INIT_FAIL
                             "The ""%s"" game subsystem could not be started, because of an error (""%s"")."
     IDS_BAD_DISPLAYMODE     "The specified display mode (%ix%ix%i) seems to be unusable (""%s"")."
-    IDS_PROFILE_HEADER1     "  Min :   Avg :   Max :   Time:  # : Profile Name (this loop: %2.5f seconds, %3.1f FPS)"
+    IDS_PROFILE_HEADER1     "  Min :   Avg :   Max :   Time:   # : Profile Name (this loop: %2.5f seconds)"
     IDS_PROFILE_HEADER2     "--------------------------------------------"
-    IDS_PROFILE_SAMPLE      "%5s : %5s : %5s : %5s : %3s : %s"
+    IDS_PROFILE_SAMPLE      "%5s : %5s : %5s : %5s : %3.3s : %s"
     IDS_TEXTURE_LOAD_FAILED "Couldn't load texture %s (texture name %s)."
     IDS_TEXTURE_FIND_FAILED "Couldn't find texture ""%s""."
 END

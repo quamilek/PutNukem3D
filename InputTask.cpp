@@ -37,6 +37,8 @@ bool CInputTask::Start()
 
 void CInputTask::Update()
 {
+    PROFILE("InputTask update");
+
 	SDL_PumpEvents();
 	oldButtons=buttons;
 	buttons=SDL_GetRelativeMouseState(&dX,&dY);

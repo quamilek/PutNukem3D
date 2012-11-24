@@ -32,7 +32,7 @@ protected:
 	{
 		profileSample()
 		{
-			bIsValid=false; 
+			bIsValid=false;
 			dataCount=0;
 			averagePc=minPc=maxPc=-1;
 		}
@@ -41,7 +41,7 @@ protected:
 		bool bIsOpen;		//is this sample currently being profiled?
 		unsigned int callCount;	//number of times this sample has been profiled this frame
 		std::string name;	//name of the sample
-		
+
 		float startTime;	//starting time on the clock, in seconds
 		float totalTime;	//total time recorded across all profiles of this sample
 		float childTime;	//total time taken by children of this sample
@@ -62,14 +62,14 @@ class IProfilerOutputHandler
 {
 public:
 	virtual void BeginOutput(float tTotal)=0;
-	virtual void Sample(float fMin, float fAvg, float fMax, float tAvg, int callCount, std::string name, int parentCount)=0;
+	virtual void Sample(/*float rootTime, */float fMin, float fAvg, float fMax, float tAvg, int callCount, std::string name, int parentCount)=0;
 	virtual void EndOutput()=0;
 };
 
-#ifdef _DEBUG
+//#ifdef _DEBUG
 #define PROFILE(name) CProfileSample _profile_sample(name);
-#else
+/*#else
 #define PROFILE(name)
-#endif
+#endif*/
 
 #endif

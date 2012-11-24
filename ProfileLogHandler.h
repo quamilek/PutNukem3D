@@ -11,12 +11,12 @@
 
 #include "profiler.h"
 
-class CProfileLogHandler : public IProfilerOutputHandler  
+class CProfileLogHandler : public IProfilerOutputHandler
 {
 public:
 	void BeginOutput(float tTime);
 	void EndOutput();
-	void Sample(float fMin, float fAvg, float fMax, float tAvg, int callCount, std::string name, int parentCount);
+	void Sample(/*float rootTime,*/float fMin, float fAvg, float fMax, float tAvg, int callCount, std::string name, int parentCount);
 };
 
 #endif // !defined(AFX_PROFILELOGHANDLER_H__CAD57C2F_2BF7_492C_8ED3_EFE606EF3EAC__INCLUDED_)
