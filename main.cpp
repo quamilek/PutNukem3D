@@ -140,9 +140,14 @@ void CApplication::Run(int argc, char *argv[])
 	globalTimer->priority=10;
 	CKernel::GetSingleton().AddTask(CMMPointer<ITask>(globalTimer));
 
-	CPongTask pong;
+	/*CPongTask pong;
 	pong.priority=100;
-	CKernel::GetSingleton().AddTask(CMMPointer<ITask>(&pong));
+	CKernel::GetSingleton().AddTask(CMMPointer<ITask>(&pong));*/
+
+    //render the state of the game
+	renderTask=new CRenderTask();
+	renderTask->priority = 101;
+	CKernel::GetSingleton().AddTask(CMMPointer<ITask>(renderTask));
 
 	//set up the profiler with an output handler
 	CProfileLogHandler profileLogHandler;

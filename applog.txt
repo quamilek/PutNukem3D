@@ -1,7 +1,6 @@
-  Min :   Avg :   Max :   Time:   # : Profile Name (this loop: 0.99400 seconds)
+  Min :   Avg :   Max :   Time:   # : Profile Name (this loop: 136.89001 seconds)
 --------------------------------------------
- 99.5 :  99.5 :  99.5 :   1.0 :   1 : Kernel execute
-  0.3 :   0.3 :   0.3 :   0.0 : 228 :  InputTask update
-  0.2 :   0.2 :   0.2 :   0.0 : 228 :  PongTask Update
+100.0 : 100.0 : 100.0 : 136.9 :   1 : Kernel execute
+  0.0 :   0.0 :   0.0 :   0.0 : 821 :  InputTask update
 
 

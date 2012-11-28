@@ -1,0 +1,6 @@
+Compiling shader : SimpleVertexShader.vertexshader
+
+Compiling shader : SimpleFragmentShader.fragmentshader
+
+Linking program
+

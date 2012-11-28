@@ -139,7 +139,7 @@
 	"engine.h"
 	"GlobalTimer.h"
 
-1353597290 c:\users\buka\documents\github\putnukem3d\engine.h
+1354094721 c:\users\buka\documents\github\putnukem3d\engine.h
 	<iostream>
 	<ostream>
 	<istream>
@@ -158,13 +158,17 @@
 	<ctime>
 	<windows.h>
 	"resource.h"
+	"glew.h"
 	<sdl/sdl.h>
+	<sdl/sdl_opengl.h>
 	<sdl/sdl_net.h>
 	<sdl/sdl_image.h>
 	<sdl/sdl_ttf.h>
-	<GL/gl.h>
-	<GL/glu.h>
+	<GL/glfw.h>
 	<GL/glut.h>
+	"glm/glm.hpp"
+	"glm/gtc/matrix_transform.hpp"
+	"glm/gtc/type_ptr.hpp"
 	<fmod.h>
 	"log.h"
 	"mmanager.h"
@@ -179,6 +183,7 @@
 	"globalTimer.h"
 	"inputtask.h"
 	"soundtask.h"
+	"rendertask.h"
 	"misc.h"
 	"math.h"
 
@@ -229,7 +234,7 @@
 1353760456 source:c:\users\buka\documents\github\putnukem3d\inputtask.cpp
 	"InputTask.h"
 
-1353760554 source:c:\users\buka\documents\github\putnukem3d\kernel.cpp
+1354108837 source:c:\users\buka\documents\github\putnukem3d\kernel.cpp
 	"engine.h"
 	"Kernel.h"
 
@@ -248,19 +253,19 @@
 1353596334 source:c:\users\buka\documents\github\putnukem3d\soundtask.cpp
 	"engine.h"
 
-1060381468 source:c:\users\buka\documents\github\putnukem3d\videoupdate.cpp
+1354108837 source:c:\users\buka\documents\github\putnukem3d\videoupdate.cpp
 	"engine.h"
 	"VideoUpdate.h"
 
-1353762330 source:c:\users\buka\documents\github\putnukem3d\engine.rc
+1353762405 source:c:\users\buka\documents\github\putnukem3d\engine.rc
 	"resource.h"
 	"afxres.h"
 
-1353760712 source:c:\users\buka\documents\github\putnukem3d\main.cpp
+1353804583 source:c:\users\buka\documents\github\putnukem3d\main.cpp
 	"engine.h"
 	"game.h"
 
-1058625666 c:\users\buka\documents\github\putnukem3d\game.h
+1353925508 c:\users\buka\documents\github\putnukem3d\game.h
 	"engine.h"
 
 1353596592 source:c:\users\buka\documents\github\putnukem3d\mmanager.cpp
@@ -270,4 +275,778 @@
 1353762330 source:c:\users\buka\documents\github\putnukem3d\profiler.cpp
 	"engine.h"
 	"profiler.h"
+
+1354119748 c:\users\buka\documents\github\putnukem3d\rendertask.h
+	"engine.h"
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\glm.hpp
+	"core/_fixes.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	"core/setup.hpp"
+	"./core/_detail.hpp"
+	"./core/type.hpp"
+	"./core/func_trigonometric.hpp"
+	"./core/func_exponential.hpp"
+	"./core/func_common.hpp"
+	"./core/func_packing.hpp"
+	"./core/func_geometric.hpp"
+	"./core/func_matrix.hpp"
+	"./core/func_vector_relational.hpp"
+	"./core/func_integer.hpp"
+	"./core/func_noise.hpp"
+	"./core/_swizzle.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\_fixes.hpp
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\setup.hpp
+	<immintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\_detail.hpp
+	"setup.hpp"
+	<cassert>
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type.hpp
+	"type_half.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_gentype.hpp"
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"type_mat2x2.hpp"
+	"type_mat2x3.hpp"
+	"type_mat2x4.hpp"
+	"type_mat3x2.hpp"
+	"type_mat3x3.hpp"
+	"type_mat3x4.hpp"
+	"type_mat4x2.hpp"
+	"type_mat4x3.hpp"
+	"type_mat4x4.hpp"
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\core\type_half.hpp
+	<cstdlib>
+	"type_half.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_half.inl
+	"_detail.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_float.hpp
+	"type_half.hpp"
+	"setup.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_int.hpp
+	"setup.hpp"
+	"_detail.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_gentype.hpp
+	"type_size.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_size.hpp
+	<cstdlib>
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec1.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec1.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec.hpp
+	"type_gentype.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\_swizzle.hpp
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec1.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec2.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec2.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec2.inl
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec3.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec3.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec3.inl
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec4.hpp
+	"type_vec.hpp"
+	"type_float.hpp"
+	"type_int.hpp"
+	"type_size.hpp"
+	"_swizzle.hpp"
+	"type_vec4.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_vec4.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat2x2.hpp
+	"type_mat.hpp"
+	"type_mat2x2.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat.hpp
+	"type_gentype.hpp"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat2x2.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat2x3.hpp
+	"type_mat.hpp"
+	"type_mat2x3.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat2x3.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat2x4.hpp
+	"type_mat.hpp"
+	"type_mat2x4.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat2x4.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat3x2.hpp
+	"type_mat.hpp"
+	"type_mat3x2.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat3x2.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat3x3.hpp
+	"type_mat.hpp"
+	"type_mat3x3.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat3x3.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat3x4.hpp
+	"type_mat.hpp"
+	"type_mat3x4.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat3x4.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat4x2.hpp
+	"type_mat.hpp"
+	"type_mat4x2.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat4x2.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat4x3.hpp
+	"type_mat.hpp"
+	"type_mat4x3.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat4x3.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat4x4.hpp
+	"type_mat.hpp"
+	"type_mat4x4.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\type_mat4x4.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_trigonometric.hpp
+	"func_trigonometric.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_trigonometric.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_exponential.hpp
+	"func_exponential.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_exponential.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_common.hpp
+	"_fixes.hpp"
+	"func_common.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_common.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_packing.hpp
+	"func_packing.inl"
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\core\func_packing.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_geometric.hpp
+	"func_geometric.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_geometric.inl
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\core\func_matrix.hpp
+	"func_matrix.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_matrix.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_vector_relational.hpp
+	"_detail.hpp"
+	"func_vector_relational.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_vector_relational.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_integer.hpp
+	"func_integer.inl"
+
+1330671822 c:\users\buka\documents\github\putnukem3d\glm\core\func_integer.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_noise.hpp
+	"func_noise.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\core\func_noise.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\gtc\matrix_transform.hpp
+	"../glm.hpp"
+	"matrix_transform.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\gtc\matrix_transform.inl
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\gtc\type_ptr.hpp
+	"../glm.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1330671824 c:\users\buka\documents\github\putnukem3d\glm\gtc\type_ptr.inl
+
+1354121502 source:c:\users\buka\documents\github\putnukem3d\rendertask.cpp
+	"RenderTask.h"
+
+1344243548 source:c:\users\buka\documents\github\putnukem3d\glew.c
+	<GL/glew.h>
+	<GL/wglew.h>
+	<GL/glxew.h>
+	<dlfcn.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+	<string.h>
+	<AvailabilityMacros.h>
+	<dlfcn.h>
+	<mach-o/dyld.h>
+
+1344245012 c:\users\buka\documents\github\putnukem3d\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1344245012 c:\users\buka\documents\github\putnukem3d\wglew.h
+	<windows.h>
+
+1342361890 c:\users\buka\documents\github\putnukem3d\glfw.h
+	<OpenGL/gl3.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL3/gl3.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\windows.h
+	<winresrc.h>
+	<stdarg.h>
+	<windef.h>
+	<wincon.h>
+	<winbase.h>
+	<wingdi.h>
+	<winuser.h>
+	<winnls.h>
+	<winver.h>
+	<winnetwk.h>
+	<winreg.h>
+	<winsvc.h>
+	<cderr.h>
+	<dde.h>
+	<ddeml.h>
+	<dlgs.h>
+	<imm.h>
+	<lzexpand.h>
+	<mmsystem.h>
+	<nb30.h>
+	<rpc.h>
+	<shellapi.h>
+	<winperf.h>
+	<commdlg.h>
+	<winspool.h>
+	<winsock2.h>
+	<winsock.h>
+	<ole2.h>
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winresrc.h
+	<winuser.h>
+	<winnt.h>
+	<winver.h>
+	<dde.h>
+	<dlgs.h>
+	<commctrl.h>
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\winuser.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winnt.h
+	<winerror.h>
+	<string.h>
+	<basetsd.h>
+	<pshpack4.h>
+	<poppack.h>
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winerror.h
+
+1250305080 c:\program files (x86)\codeblocks\mingw\include\string.h
+	<_mingw.h>
+	<stddef.h>
+
+1250305074 c:\program files (x86)\codeblocks\mingw\include\_mingw.h
+
+1228530712 c:\program files (x86)\codeblocks\mingw\include\basetsd.h
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\pshpack4.h
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\poppack.h
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\winver.h
+
+1228530714 c:\program files (x86)\codeblocks\mingw\include\dde.h
+
+1228530714 c:\program files (x86)\codeblocks\mingw\include\dlgs.h
+
+1228530714 c:\program files (x86)\codeblocks\mingw\include\commctrl.h
+	<prsht.h>
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\prsht.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\windef.h
+	<winnt.h>
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\wincon.h
+
+1228530730 c:\program files (x86)\codeblocks\mingw\include\winbase.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\wingdi.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winnls.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winnetwk.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winreg.h
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\winsvc.h
+
+1228530712 c:\program files (x86)\codeblocks\mingw\include\cderr.h
+
+1228530714 c:\program files (x86)\codeblocks\mingw\include\ddeml.h
+
+1228530716 c:\program files (x86)\codeblocks\mingw\include\imm.h
+
+1228530720 c:\program files (x86)\codeblocks\mingw\include\lzexpand.h
+
+1228530722 c:\program files (x86)\codeblocks\mingw\include\mmsystem.h
+
+1228530722 c:\program files (x86)\codeblocks\mingw\include\nb30.h
+
+1228530726 c:\program files (x86)\codeblocks\mingw\include\rpc.h
+	<windows.h>
+	<rpcdce.h>
+	<rpcnsi.h>
+	<rpcnterr.h>
+	<winerror.h>
+	<excpt.h>
+
+1228530726 c:\program files (x86)\codeblocks\mingw\include\rpcdce.h
+	<basetyps.h>
+	<rpcdcep.h>
+
+1228530712 c:\program files (x86)\codeblocks\mingw\include\basetyps.h
+
+1228530728 c:\program files (x86)\codeblocks\mingw\include\rpcdcep.h
+
+1228530728 c:\program files (x86)\codeblocks\mingw\include\rpcnsi.h
+
+1228530728 c:\program files (x86)\codeblocks\mingw\include\rpcnterr.h
+
+1250305076 c:\program files (x86)\codeblocks\mingw\include\excpt.h
+	<_mingw.h>
+	<windef.h>
+
+1228530728 c:\program files (x86)\codeblocks\mingw\include\shellapi.h
+	<pshpack2.h>
+	<poppack.h>
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\pshpack2.h
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winperf.h
+
+1228530714 c:\program files (x86)\codeblocks\mingw\include\commdlg.h
+	<unknwn.h>
+	<prsht.h>
+
+1228530730 c:\program files (x86)\codeblocks\mingw\include\unknwn.h
+	<windows.h>
+	<objfwd.h>
+	<wtypes.h>
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\objfwd.h
+	<basetyps.h>
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\wtypes.h
+	<rpc.h>
+	<rpcndr.h>
+
+1228530728 c:\program files (x86)\codeblocks\mingw\include\rpcndr.h
+	<rpcnsip.h>
+	<objfwd.h>
+
+1228530728 c:\program files (x86)\codeblocks\mingw\include\rpcnsip.h
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\winspool.h
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\winsock2.h
+	<windows.h>
+
+1228530732 c:\program files (x86)\codeblocks\mingw\include\winsock.h
+	<windows.h>
+	<mswsock.h>
+
+1228530722 c:\program files (x86)\codeblocks\mingw\include\mswsock.h
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\ole2.h
+	<winerror.h>
+	<objbase.h>
+	<olectlid.h>
+	<oleauto.h>
+	<oleidl.h>
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\objbase.h
+	<rpc.h>
+	<rpcndr.h>
+	<stdlib.h>
+	<basetyps.h>
+	<wtypes.h>
+	<unknwn.h>
+	<objidl.h>
+	<cguid.h>
+
+1250305080 c:\program files (x86)\codeblocks\mingw\include\stdlib.h
+	<_mingw.h>
+	<stddef.h>
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\objidl.h
+	<objfwd.h>
+
+1228530712 c:\program files (x86)\codeblocks\mingw\include\cguid.h
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\olectlid.h
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\oleauto.h
+	<oaidl.h>
+
+1228530722 c:\program files (x86)\codeblocks\mingw\include\oaidl.h
+	<windows.h>
+	<ole2.h>
+
+1228530724 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
+	<objfwd.h>
+
+1250305076 c:\program files (x86)\codeblocks\mingw\include\inttypes.h
+	<_mingw.h>
+	<stdint.h>
+	<stddef.h>
+
+1250305080 c:\program files (x86)\codeblocks\mingw\include\stdint.h
+	<stddef.h>
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\gl\glu.h
+	<stddef.h>
+	<GL/gl.h>
+
+1228530734 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_platform.h
+
+1250305082 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
+
+1250305080 c:\program files (x86)\codeblocks\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
+
+1250305078 c:\program files (x86)\codeblocks\mingw\include\malloc.h
+	<_mingw.h>
+	<stdlib.h>
+
+1250305078 c:\program files (x86)\codeblocks\mingw\include\memory.h
+	<string.h>
+
+1250305080 c:\program files (x86)\codeblocks\mingw\include\strings.h
+	<string.h>
+
+1250305076 c:\program files (x86)\codeblocks\mingw\include\ctype.h
+	<_mingw.h>
+	<stddef.h>
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\begin_code.h
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\close_code.h
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1250305078 c:\program files (x86)\codeblocks\mingw\include\process.h
+	<_mingw.h>
+	<sys/types.h>
+	<stdint.h>
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_keysym.h
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1199052374 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_opengl.h
+	"SDL_config.h"
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<gl.h>
+	<glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<stddef.h>
+
+1325792726 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_net.h
+	"SDL.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325788834 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325793194 c:\program files (x86)\codeblocks\mingw\include\sdl\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+983698386 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1352888170 c:\program files (x86)\codeblocks\mingw\include\fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1352888170 c:\program files (x86)\codeblocks\mingw\include\fmod_codec.h
+
+1352888170 c:\program files (x86)\codeblocks\mingw\include\fmod_dsp.h
+
+1352888170 c:\program files (x86)\codeblocks\mingw\include\fmod_memoryinfo.h
+
+1250305078 c:\program files (x86)\codeblocks\mingw\include\math.h
+	<_mingw.h>
+
+1228530712 c:\program files (x86)\codeblocks\mingw\include\afxres.h
+	<windows.h>
+
+1344245012 c:\program files (x86)\codeblocks\mingw\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1344245012 c:\program files (x86)\codeblocks\mingw\include\gl\wglew.h
+	<windows.h>
+
+1344245012 c:\program files (x86)\codeblocks\mingw\include\gl\glxew.h
+	<X11/Xlib.h>
+	<X11/Xutil.h>
+	<X11/Xmd.h>
+	<GL/glew.h>
+
+1281281824 c:\program files (x86)\codeblocks\mingw\include\gl\glfw.h
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
 

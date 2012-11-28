@@ -12,6 +12,7 @@
 CKernel::CKernel()
 {
 	SDL_Init(0);
+	//glfwInit();
 	//SDLNet_Init();
 }
 
@@ -19,6 +20,7 @@ CKernel::~CKernel()
 {
 	//SDLNet_Quit();
 	SDL_Quit();
+	//glfwTerminate();
 }
 
 int CKernel::Execute()

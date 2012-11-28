@@ -13,7 +13,14 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="glfw" />
 				</Compiler>
+				<ResourceCompiler>
+					<Add directory="glfw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add directory="glfw" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin\Release\Put Nukem 3d" prefix_auto="1" extension_auto="1" />
@@ -30,6 +37,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="C:\Program Files (x86)\CodeBlocks\MinGW\include" />
 		</Compiler>
 		<Linker>
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libmingw32.a" />
@@ -40,9 +48,19 @@
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglu32.a" />
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglut32win.a" />
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libgdi32.a" />
+			<Add library="glut32" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\glew32.lib" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\glew32mx.lib" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\glew32mxs.lib" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\glew32s.lib" />
+			<Add library="glew32" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglfw.a" />
+			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\libglfwdll.a" />
+			<Add library="glfw" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
-			<Add library="glut32" />
+			<Add library="gdi32" />
+			<Add directory="C:\Program Files (x86)\CodeBlocks\MinGW\lib" />
 		</Linker>
 		<Unit filename="GlobalTimer.cpp" />
 		<Unit filename="GlobalTimer.h" />
@@ -55,8 +73,12 @@
 		<Unit filename="ProfileLogHandler.cpp" />
 		<Unit filename="ProfileLogHandler.h" />
 		<Unit filename="Put Nukem 3d.layout" />
+		<Unit filename="RenderTask.cpp" />
+		<Unit filename="RenderTask.h" />
 		<Unit filename="Settings.cpp" />
 		<Unit filename="Settings.h" />
+		<Unit filename="SimpleFragmentShader.fragmentshader" />
+		<Unit filename="SimpleVertexShader.vertexshader" />
 		<Unit filename="SoundTask.cpp" />
 		<Unit filename="SoundTask.h" />
 		<Unit filename="VideoUpdate.cpp" />
@@ -68,6 +90,10 @@
 		</Unit>
 		<Unit filename="functor.h" />
 		<Unit filename="game.h" />
+		<Unit filename="glew.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="glfw.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="misc.h" />
 		<Unit filename="mmanager.cpp" />
