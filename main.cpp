@@ -107,6 +107,7 @@ public:
 
 void CApplication::Run(int argc, char *argv[])
 {
+
 	//open logfiles
 	if(!CLog::Get().Init())return;
 
@@ -114,6 +115,7 @@ void CApplication::Run(int argc, char *argv[])
 	//create a couple of singletons
 	new CSettingsManager();
 	new CKernel();
+	new CObjLoader();
 
 	//parse the 'settings.eng' file
 	CSettingsManager::GetSingleton().ParseFile("settings.esf");

@@ -18,10 +18,13 @@ class CRenderTask : public ITask
         int lastTime;
         float angle;
         void animate();
+        void LoadTexture(const char * image_path, GLuint* texture);
         GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path);
+        GLuint Texture;
         GLuint programID;
-        GLfloat g_vertex_buffer_data[36*3];
-        GLfloat g_color_buffer_data[36*3];
+        std::vector<glm::vec3> g_vertex_buffer_data;
+        std::vector<glm::vec2> g_uv_buffer_data;
+        std::vector<glm::vec3> g_normal_buffer_data;
         glm::mat4 MVP;
         glm::mat4 Model;
         glm::mat4 Projection;
@@ -29,7 +32,8 @@ class CRenderTask : public ITask
         GLuint MatrixID;
         GLuint VertexArrayID;
         GLuint vertexbuffer;
-        GLuint colorbuffer;
+        GLuint uvbuffer;
+        GLuint normalbuffer;
 
 
         AUTO_SIZE;

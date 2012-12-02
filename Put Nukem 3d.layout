@@ -7,20 +7,32 @@
 	<File name="GlobalTimer.h" open="0" top="0" tabpos="0">
 		<Cursor position="135" topLine="0" />
 	</File>
-	<File name="InputTask.cpp" open="1" top="0" tabpos="9">
+	<File name="InputTask.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="591" topLine="17" />
 	</File>
-	<File name="InputTask.h" open="1" top="0" tabpos="8">
+	<File name="InputTask.h" open="0" top="0" tabpos="8">
 		<Cursor position="518" topLine="0" />
 	</File>
-	<File name="Kernel.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1414" topLine="49" />
+	<File name="Kernel.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="386" topLine="75" />
 	</File>
-	<File name="Kernel.h" open="0" top="0" tabpos="0">
-		<Cursor position="558" topLine="0" />
+	<File name="Kernel.h" open="1" top="0" tabpos="5">
+		<Cursor position="1080" topLine="6" />
 	</File>
-	<File name="Log.cpp" open="1" top="0" tabpos="3">
+	<File name="Log.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="2056" topLine="0" />
+	</File>
+	<File name="Log.h" open="0" top="0" tabpos="6">
+		<Cursor position="468" topLine="13" />
+	</File>
+	<File name="MeshObject.hpp" open="1" top="0" tabpos="4">
+		<Cursor position="249" topLine="0" />
+	</File>
+	<File name="ObjLoader.cpp" open="1" top="1" tabpos="7">
+		<Cursor position="1755" topLine="17" />
+	</File>
+	<File name="ObjLoader.h" open="1" top="0" tabpos="6">
+		<Cursor position="359" topLine="0" />
 	</File>
 	<File name="ProfileLogHandler.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="1369" topLine="6" />
@@ -28,11 +40,11 @@
 	<File name="ProfileLogHandler.h" open="0" top="0" tabpos="0">
 		<Cursor position="546" topLine="0" />
 	</File>
-	<File name="RenderTask.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="7292" topLine="219" />
+	<File name="RenderTask.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="6118" topLine="176" />
 	</File>
-	<File name="RenderTask.h" open="1" top="0" tabpos="5">
-		<Cursor position="703" topLine="0" />
+	<File name="RenderTask.h" open="1" top="0" tabpos="1">
+		<Cursor position="196" topLine="6" />
 	</File>
 	<File name="Settings.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="613" topLine="86" />
@@ -40,23 +52,26 @@
 	<File name="Settings.h" open="0" top="0" tabpos="0">
 		<Cursor position="604" topLine="0" />
 	</File>
-	<File name="SimpleFragmentShader.fragmentshader" open="1" top="0" tabpos="12">
-		<Cursor position="143" topLine="0" />
+	<File name="SimpleFragmentShader.fragmentshader" open="0" top="0" tabpos="9">
+		<Cursor position="74" topLine="0" />
 	</File>
-	<File name="SimpleVertexShader.vertexshader" open="1" top="0" tabpos="11">
-		<Cursor position="479" topLine="0" />
+	<File name="SimpleVertexShader.vertexshader" open="0" top="0" tabpos="8">
+		<Cursor position="231" topLine="0" />
 	</File>
 	<File name="SoundTask.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="881" topLine="0" />
 	</File>
-	<File name="VideoUpdate.cpp" open="1" top="0" tabpos="7">
+	<File name="SoundTask.h" open="0" top="0" tabpos="0">
+		<Cursor position="405" topLine="0" />
+	</File>
+	<File name="VideoUpdate.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="792" topLine="28" />
 	</File>
-	<File name="VideoUpdate.h" open="1" top="0" tabpos="10">
+	<File name="VideoUpdate.h" open="0" top="0" tabpos="10">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="engine.h" open="1" top="0" tabpos="4">
-		<Cursor position="683" topLine="27" />
+	<File name="engine.h" open="1" top="0" tabpos="9">
+		<Cursor position="1258" topLine="39" />
 	</File>
 	<File name="engine.rc" open="0" top="0" tabpos="4">
 		<Cursor position="2490" topLine="45" />
@@ -67,17 +82,17 @@
 	<File name="glfw.h" open="0" top="0" tabpos="0">
 		<Cursor position="15474" topLine="401" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="946" topLine="5" />
+	<File name="main.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="2779" topLine="102" />
 	</File>
 	<File name="misc.h" open="0" top="0" tabpos="6">
 		<Cursor position="795" topLine="15" />
 	</File>
 	<File name="mmanager.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="2030" topLine="68" />
+		<Cursor position="197" topLine="0" />
 	</File>
-	<File name="mmanager.h" open="0" top="0" tabpos="0">
-		<Cursor position="2063" topLine="73" />
+	<File name="mmanager.h" open="1" top="0" tabpos="11">
+		<Cursor position="2063" topLine="78" />
 	</File>
 	<File name="profiler.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="3580" topLine="115" />

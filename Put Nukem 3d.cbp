@@ -70,6 +70,10 @@
 		<Unit filename="Kernel.h" />
 		<Unit filename="Log.cpp" />
 		<Unit filename="Log.h" />
+		<Unit filename="MeshObject.cpp" />
+		<Unit filename="MeshObject.hpp" />
+		<Unit filename="ObjLoader.cpp" />
+		<Unit filename="ObjLoader.h" />
 		<Unit filename="ProfileLogHandler.cpp" />
 		<Unit filename="ProfileLogHandler.h" />
 		<Unit filename="Put Nukem 3d.layout" />

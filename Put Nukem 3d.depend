@@ -139,7 +139,7 @@
 	"engine.h"
 	"GlobalTimer.h"
 
-1354094721 c:\users\buka\documents\github\putnukem3d\engine.h
+1354397200 c:\users\buka\documents\github\putnukem3d\engine.h
 	<iostream>
 	<ostream>
 	<istream>
@@ -179,6 +179,7 @@
 	"settings.h"
 	"profiler.h"
 	"profileloghandler.h"
+	"ObjLoader.h"
 	"videoupdate.h"
 	"globalTimer.h"
 	"inputtask.h"
@@ -261,7 +262,7 @@
 	"resource.h"
 	"afxres.h"
 
-1353804583 source:c:\users\buka\documents\github\putnukem3d\main.cpp
+1354397786 source:c:\users\buka\documents\github\putnukem3d\main.cpp
 	"engine.h"
 	"game.h"
 
@@ -276,7 +277,7 @@
 	"engine.h"
 	"profiler.h"
 
-1354119748 c:\users\buka\documents\github\putnukem3d\rendertask.h
+1354397300 c:\users\buka\documents\github\putnukem3d\rendertask.h
 	"engine.h"
 
 1330671822 c:\users\buka\documents\github\putnukem3d\glm\glm.hpp
@@ -512,7 +513,7 @@
 
 1330671824 c:\users\buka\documents\github\putnukem3d\glm\gtc\type_ptr.inl
 
-1354121502 source:c:\users\buka\documents\github\putnukem3d\rendertask.cpp
+1354439142 source:c:\users\buka\documents\github\putnukem3d\rendertask.cpp
 	"RenderTask.h"
 
 1344243548 source:c:\users\buka\documents\github\putnukem3d\glew.c
@@ -1049,4 +1050,16 @@
 	<OpenGL/glu.h>
 	<GL/gl.h>
 	<GL/glu.h>
+
+1354208621 source:c:\users\buka\documents\github\putnukem3d\meshobject.cpp
+	"MeshObject.hpp"
+
+1354288157 c:\users\buka\documents\github\putnukem3d\meshobject.hpp
+	"engine.h"
+
+1354438913 source:c:\users\buka\documents\github\putnukem3d\objloader.cpp
+	"ObjLoader.h"
+
+1354398421 c:\users\buka\documents\github\putnukem3d\objloader.h
+	"engine.h"
 

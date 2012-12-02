@@ -56,6 +56,7 @@
 #include "settings.h"
 #include "profiler.h"
 #include "profileloghandler.h"
+#include "ObjLoader.h"
 
 
 //task pool
@@ -68,5 +69,7 @@
 //misc
 #include "misc.h"
 #include "math.h"
+
+
 
 #endif
