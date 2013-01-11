@@ -1,0 +1,46 @@
+#version 330 core
+
+layout(location = 0) in vec3 vertexPosition_modelspace;
+layout(location = 1) in vec2 vertexUV;
+layout(location = 2) in vec3 vertexNormal_modelspace;
+
+uniform mat4 VP;
+uniform mat4 M;
+uniform mat4 V;
+uniform vec4 LightLocation_world_space;
+
+
+out vec2 UV;
+out vec3 Normal_eyespace;
+out vec3 Eye_Direction;
+out vec3 LightDirection_eyespace;
+out vec3 interpolatedColor;
+out vec4 world_position;
+
+void main()
+{
+    mat4 MVP = VP*M;
+
+    vec4 lightPos=LightLocation_world_space;
+
+
+    vec4 v = vec4(vertexPosition_modelspace,1);
+    world_position = M*v;
+
+    vec3 vertexPosition_cameraspace = ( V * M * vec4(vertexPosition_modelspace,1)).xyz;
+    Eye_Direction = vec3(0,0,0) - vertexPosition_cameraspace;
+
+    vec3 LightPosition_eyespace = ( V * LightLocation_world_space).xyz;
+    LightDirection_eyespace = LightPosition_eyespace + Eye_Direction;
+
+    Normal_eyespace = ( V * M * vec4(vertexNormal_modelspace,0)).xyz;
+
+    gl_Position = MVP * v;
+
+    UV = vertexUV;
+    interpolatedColor.r = 0.5;
+    interpolatedColor.g = 0.5;
+    interpolatedColor.b = 0.5;
+
+
+}

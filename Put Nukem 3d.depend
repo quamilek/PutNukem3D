@@ -139,7 +139,7 @@
 	"engine.h"
 	"GlobalTimer.h"
 
-1354397200 c:\users\buka\documents\github\putnukem3d\engine.h
+1357678170 c:\users\buka\documents\github\putnukem3d\engine.h
 	<iostream>
 	<ostream>
 	<istream>
@@ -180,6 +180,9 @@
 	"profiler.h"
 	"profileloghandler.h"
 	"ObjLoader.h"
+	"MeshObject.h"
+	"MeshManager.h"
+	"GameObject.h"
 	"videoupdate.h"
 	"globalTimer.h"
 	"inputtask.h"
@@ -262,7 +265,7 @@
 	"resource.h"
 	"afxres.h"
 
-1354397786 source:c:\users\buka\documents\github\putnukem3d\main.cpp
+1357411746 source:c:\users\buka\documents\github\putnukem3d\main.cpp
 	"engine.h"
 	"game.h"
 
@@ -277,7 +280,7 @@
 	"engine.h"
 	"profiler.h"
 
-1354397300 c:\users\buka\documents\github\putnukem3d\rendertask.h
+1357852345 c:\users\buka\documents\github\putnukem3d\rendertask.h
 	"engine.h"
 
 1330671822 c:\users\buka\documents\github\putnukem3d\glm\glm.hpp
@@ -513,7 +516,7 @@
 
 1330671824 c:\users\buka\documents\github\putnukem3d\glm\gtc\type_ptr.inl
 
-1354439142 source:c:\users\buka\documents\github\putnukem3d\rendertask.cpp
+1357859171 source:c:\users\buka\documents\github\putnukem3d\rendertask.cpp
 	"RenderTask.h"
 
 1344243548 source:c:\users\buka\documents\github\putnukem3d\glew.c
@@ -1051,15 +1054,30 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1354208621 source:c:\users\buka\documents\github\putnukem3d\meshobject.cpp
-	"MeshObject.hpp"
+1357852761 source:c:\users\buka\documents\github\putnukem3d\meshobject.cpp
+	"MeshObject.h"
 
-1354288157 c:\users\buka\documents\github\putnukem3d\meshobject.hpp
+1357677472 c:\users\buka\documents\github\putnukem3d\meshobject.hpp
 	"engine.h"
 
 1354438913 source:c:\users\buka\documents\github\putnukem3d\objloader.cpp
 	"ObjLoader.h"
 
-1354398421 c:\users\buka\documents\github\putnukem3d\objloader.h
+1357377744 c:\users\buka\documents\github\putnukem3d\objloader.h
+	"engine.h"
+
+1354578975 source:c:\users\buka\documents\github\putnukem3d\meshmanager.cpp
+	"MeshManager.h"
+
+1357678274 c:\users\buka\documents\github\putnukem3d\meshmanager.h
+	"engine.h"
+
+1357682780 c:\users\buka\documents\github\putnukem3d\gameobject.h
+	"engine.h"
+
+1357646597 source:c:\users\buka\documents\github\putnukem3d\gameobject.cpp
+	"GameObject.h"
+
+1357852719 c:\users\buka\documents\github\putnukem3d\meshobject.h
 	"engine.h"
 

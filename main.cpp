@@ -116,6 +116,7 @@ void CApplication::Run(int argc, char *argv[])
 	new CSettingsManager();
 	new CKernel();
 	new CObjLoader();
+	new CMeshManager();
 
 	//parse the 'settings.eng' file
 	CSettingsManager::GetSingleton().ParseFile("settings.esf");

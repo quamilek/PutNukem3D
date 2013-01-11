@@ -2,7 +2,8 @@
 in vec2 UV;
 in vec4 world_position;
 
-float scale = 8;
+float scale = 10;
+float offset =0.3;
 
 // Ouput data
 out vec3 color;
@@ -15,9 +16,14 @@ void main()
 	// Output color = color of the texture at the specified UV
 	//color = texture2D( myTextureSampler, UV ).rgb;
 
-	color.r = world_position.z/scale;
-	color.g = world_position.z/scale;
-	color.b = world_position.z/scale;
+	color.r = (offset+world_position.z/scale)*texture2D(myTextureSampler,UV).r;
+	color.g = (offset+world_position.z/scale)*texture2D(myTextureSampler,UV).g;
+	color.b = (offset+world_position.z/scale)*texture2D(myTextureSampler,UV).b;
 
+    /*
+	color.r = (offset+world_position.z/scale);
+	color.g = (offset+world_position.z/scale);
+	color.b = (offset+world_position.z/scale);
+    */
 
 }

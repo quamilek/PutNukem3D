@@ -62,6 +62,8 @@
 			<Add library="gdi32" />
 			<Add directory="C:\Program Files (x86)\CodeBlocks\MinGW\lib" />
 		</Linker>
+		<Unit filename="GameObject.cpp" />
+		<Unit filename="GameObject.h" />
 		<Unit filename="GlobalTimer.cpp" />
 		<Unit filename="GlobalTimer.h" />
 		<Unit filename="InputTask.cpp" />
@@ -70,8 +72,10 @@
 		<Unit filename="Kernel.h" />
 		<Unit filename="Log.cpp" />
 		<Unit filename="Log.h" />
+		<Unit filename="MeshManager.cpp" />
+		<Unit filename="MeshManager.h" />
 		<Unit filename="MeshObject.cpp" />
-		<Unit filename="MeshObject.hpp" />
+		<Unit filename="MeshObject.h" />
 		<Unit filename="ObjLoader.cpp" />
 		<Unit filename="ObjLoader.h" />
 		<Unit filename="ProfileLogHandler.cpp" />

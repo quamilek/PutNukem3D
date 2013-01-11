@@ -15,6 +15,47 @@ CRenderTask::~CRenderTask()
 
 }
 
+void CRenderTask::putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel)
+{
+ int bpp = surface->format->BytesPerPixel;
+ // Here p is the address to the pixel we want to set
+ Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * bpp;
+
+ switch(bpp)
+ {
+  case 1:
+   *p = pixel;
+   break;
+  case 2:
+   *(Uint16 *)p = pixel;
+   break;
+  case 3:
+   if(SDL_BYTEORDER == SDL_BIG_ENDIAN)
+   {
+    p[0] = (pixel >> 16) & 0xff;
+    p[1] = (pixel >> 8) & 0xff;
+    p[2] = pixel & 0xff;
+   } else {
+    p[0] = pixel & 0xff;
+    p[1] = (pixel >> 8) & 0xff;
+    p[2] = (pixel >> 16) & 0xff;
+   }
+   break;
+  case 4:
+   *(Uint32 *)p = pixel;
+   break;
+ }
+}//putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel)
+
+Uint32 CRenderTask::getpixel( SDL_Surface *surface, int x, int y )
+{
+    //Convert the pixels to 32 bit
+    Uint32 *pixels = (Uint32 *)surface->pixels;
+
+    //Get the requested pixel
+    return pixels[ ( y * surface->w ) + x ];
+}//get_pixel32( SDL_Surface *surface, int x, int y )
+
 void CRenderTask::LoadTexture(const char * image_path, GLuint* texture)
 {
     SDL_Surface *surface;	// This surface will tell us the details of the image
@@ -173,31 +214,24 @@ bool CRenderTask::Start()
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
-	glGenVertexArrays(1, &VertexArrayID);
 
-	glBindVertexArray(VertexArrayID);
+    std::string modelName = "suzanne";
+    //logo3d = new CMeshObject(modelName);
+    logo3d2 = new CMeshObject(modelName);
 
-	CObjLoader::GetSingleton().LoadObj("putnukemLogo.obj",g_vertex_buffer_data,g_uv_buffer_data,g_normal_buffer_data);
-
-
-	glGenBuffers(1, &vertexbuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-	glBufferData(GL_ARRAY_BUFFER,g_vertex_buffer_data.size()*sizeof(glm::vec3), &g_vertex_buffer_data[0], GL_STATIC_DRAW);
-
-	glGenBuffers(1, &uvbuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
-	glBufferData(GL_ARRAY_BUFFER,g_uv_buffer_data.size()*sizeof(glm::vec3),&g_uv_buffer_data[0],GL_STATIC_DRAW);
-
-	glGenBuffers(1, &normalbuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
-	glBufferData(GL_ARRAY_BUFFER,g_normal_buffer_data.size()*sizeof(glm::vec3),&g_normal_buffer_data[0],GL_STATIC_DRAW);
+    modelName = "sun";
+    sun = new CMeshObject(modelName);
 
 
     programID = LoadShaders( "SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader" );
+    programID2 = LoadShaders("NewVShader.vertexshader","NewFShader.fragmentshader");
+    sunshader = LoadShaders("sunVshader.vs","sunFshader.fs");
 
     LoadTexture("logo_diff.bmp",&Texture);
 
-    MatrixID = glGetUniformLocation(programID, "MVP");
+
+
+    //
     // Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 	Projection = glm::perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 	// Camera matrix
@@ -206,7 +240,7 @@ bool CRenderTask::Start()
 								glm::vec3(0,0,0), // and looks at the origin
 								glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
 						   );
-	// Model matrix : an identity matrix (model will be at the origin)
+
 
 
     return true;
@@ -214,54 +248,81 @@ bool CRenderTask::Start()
 
 void CRenderTask::animate()
 {
-    angle=angle+speed;
-    if(angle>=360){
-        angle=(-360);
+   /* logo3d->rotation.y=logo3d->rotation.y+speed/2.0f;
+    if(logo3d->rotation.y>=360){
+        logo3d->rotation.y=(-360);
     }
+
+    logo3d->position.z+=0.01f;
+
+    if(logo3d->position.z>=5.0f){
+        logo3d->position.z=0.0f;
+    }
+*/
+
+    logo3d2->rotation.y=logo3d2->rotation.y+speed/4.0f;
+    if(logo3d2->rotation.y>=360){
+        logo3d2->rotation.y=(-360);
+    }
+
 
 }
 
 void CRenderTask::Update()
 {
     PROFILE("RenderTask Update");
-    // Model matrix : an identity matrix (model will be at the origin)
-    Model = glm::mat4(1.0f);
 
-	Model = glm::gtc::matrix_transform::rotate(Model,angle,glm::vec3(0.0f,1.0f,0.0f));
-	// Our ModelViewProjection : multiplication of our 3 matrices
-	MVP        = Projection * View * Model; // Remember, matrix multiplication is the other way around
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-     glUseProgram(programID);
 
-    glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 
-    glVertexAttribPointer(
-        0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-        3,                  // size
-        GL_FLOAT,           // type
-        GL_FALSE,           // normalized?
-        0,                  // stride
-        (void*)0            // array buffer offset
-    );
+    sun->position.y=3.0f;
+    sun->position.x=-3.0f;
+    sun->position.z=-3.0f;
 
-    glEnableVertexAttribArray(1);
-    glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE,0,(void*)0);
+    sun->updateModel();
 
-    glEnableVertexAttribArray(2);
-    glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE,0,(void*)0);
+    VP = Projection * View;
 
-    glDrawArrays(GL_TRIANGLES, 0, g_vertex_buffer_data.size()); // Starting from vertex 0; 3 vertices total -> 1 triangle
+    glUseProgram(sunshader);
 
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-    glDisableVertexAttribArray(2);
+    glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &VP[0][0]);
+
+    MatrixID = glGetUniformLocation(sunshader, "VP");
+    ModelMatrixID = glGetUniformLocation(sunshader, "M");
+    glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &VP[0][0]);
+    glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &sun->Model[0][0]);
+
+    sun->drawMesh();
+
+
+    logo3d2->updateModel();
+
+
+
+    glUseProgram(programID2);
+    MatrixID = glGetUniformLocation(programID2, "VP");
+    ModelMatrixID = glGetUniformLocation(programID2, "M");
+    ViewID = glGetUniformLocation(programID2, "V");
+    lightID1 = glGetUniformLocation(programID2,"LightLocation_world_space");
+
+    glUniform4f(lightID1,3,-3,-3,1);
+
+    glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &VP[0][0]);
+    glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &logo3d2->Model[0][0]);
+    glUniformMatrix4fv(ViewID, 1, GL_FALSE, &View[0][0]);
+
+
+    logo3d2->drawMesh();
+
+
+
+
+
+
+
     animate();
 
 

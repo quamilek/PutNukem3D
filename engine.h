@@ -1,7 +1,7 @@
 #ifndef ENGINE_H_INCLUDED
 #define ENGINE_H_INCLUDED
 #pragma warning ( disable : 4786 )
-
+#define NDEBUG
 
 #include <iostream>
 #include <ostream>
@@ -57,6 +57,11 @@
 #include "profiler.h"
 #include "profileloghandler.h"
 #include "ObjLoader.h"
+
+#include "MeshObject.h"
+#include "MeshManager.h"
+
+#include "GameObject.h"
 
 
 //task pool

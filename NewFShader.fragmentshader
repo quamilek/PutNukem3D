@@ -1,0 +1,57 @@
+#version 330 core
+in vec2 UV;
+in vec3 Normal_eyespace;
+in vec3 Eye_Direction;
+in vec3 LightDirection_eyespace;
+in vec3 interpolatedColor;
+in vec4 world_position;
+
+
+uniform vec4 LightLocation_world_space;
+
+
+
+// Ouput data
+out vec3 color;
+
+
+
+void main()
+{
+
+    vec3 LightColor = vec3(1,1,1);
+	float LightPower = 25.0f;
+
+    vec3 MaterialDiffuseColor = interpolatedColor.rgb;
+	vec3 MaterialAmbientColor = vec3(0.1,0.1,0.1) * MaterialDiffuseColor;
+	vec3 MaterialSpecularColor = vec3(0.3,0.3,0.3);
+
+	float distance = length( LightLocation_world_space - world_position );
+
+	vec3 n = normalize( Normal_eyespace );
+	vec3 l = normalize( LightDirection_eyespace );
+
+	float cosTheta = clamp( dot( n,l ), 0,1 );
+
+
+
+
+	vec3 E = normalize(Eye_Direction);
+
+    vec3 R = reflect(-l,n);
+    float cosAlpha = clamp( dot( E,R ), 0,1 );
+
+
+
+
+
+    color =
+		// Ambient : simulates indirect lighting
+		MaterialAmbientColor +
+		// Diffuse : "color" of the object
+		MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance*distance) +
+		// Specular : reflective highlight, like a mirror
+		MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance);
+
+
+}

@@ -4,3 +4,15 @@ Compiling shader : SimpleFragmentShader.fragmentshader
 
 Linking program
 
+Compiling shader : NewVShader.vertexshader
+
+Compiling shader : NewFShader.fragmentshader
+
+Linking program
+
+Compiling shader : sunVshader.vs
+
+Compiling shader : sunFshader.fs
+
+Linking program
+
