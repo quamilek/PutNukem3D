@@ -76,6 +76,8 @@
 		<Unit filename="MeshManager.h" />
 		<Unit filename="MeshObject.cpp" />
 		<Unit filename="MeshObject.h" />
+		<Unit filename="NewFShader.fragmentshader" />
+		<Unit filename="NewVShader.vertexshader" />
 		<Unit filename="ObjLoader.cpp" />
 		<Unit filename="ObjLoader.h" />
 		<Unit filename="ProfileLogHandler.cpp" />
@@ -111,6 +113,8 @@
 		<Unit filename="resource.h" />
 		<Unit filename="ringbuf.h" />
 		<Unit filename="singleton.h" />
+		<Unit filename="sunFshader.fs" />
+		<Unit filename="sunVshader.vs" />
 		<Extensions>
 			<code_completion />
 			<debugger />

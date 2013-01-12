@@ -218,6 +218,8 @@ bool CRenderTask::Start()
     std::string modelName = "suzanne";
     //logo3d = new CMeshObject(modelName);
     logo3d2 = new CMeshObject(modelName);
+    std::string texName = modelName + "_diffuse.bmp";
+    logo3d2->LoadTexture(texName.c_str(),&logo3d2->tex_diffuse);
 
     modelName = "sun";
     sun = new CMeshObject(modelName);
@@ -227,7 +229,7 @@ bool CRenderTask::Start()
     programID2 = LoadShaders("NewVShader.vertexshader","NewFShader.fragmentshader");
     sunshader = LoadShaders("sunVshader.vs","sunFshader.fs");
 
-    LoadTexture("logo_diff.bmp",&Texture);
+    //LoadTexture("logo_diff.bmp",&Texture);
 
 
 
@@ -248,17 +250,7 @@ bool CRenderTask::Start()
 
 void CRenderTask::animate()
 {
-   /* logo3d->rotation.y=logo3d->rotation.y+speed/2.0f;
-    if(logo3d->rotation.y>=360){
-        logo3d->rotation.y=(-360);
-    }
 
-    logo3d->position.z+=0.01f;
-
-    if(logo3d->position.z>=5.0f){
-        logo3d->position.z=0.0f;
-    }
-*/
 
     logo3d2->rotation.y=logo3d2->rotation.y+speed/4.0f;
     if(logo3d2->rotation.y>=360){
@@ -278,9 +270,9 @@ void CRenderTask::Update()
 
 
 
-    sun->position.y=3.0f;
-    sun->position.x=-3.0f;
-    sun->position.z=-3.0f;
+    sun->position.y=5;
+    sun->position.x=1.0f;
+    sun->position.z=-2.0f;
 
     sun->updateModel();
 
@@ -307,19 +299,52 @@ void CRenderTask::Update()
     ModelMatrixID = glGetUniformLocation(programID2, "M");
     ViewID = glGetUniformLocation(programID2, "V");
     lightID1 = glGetUniformLocation(programID2,"LightLocation_world_space");
+    GLuint locTextureMap0=glGetUniformLocation(programID2,"textureMap0");
 
-    glUniform4f(lightID1,3,-3,-3,1);
+    glUniform4f(lightID1,1,5,-2,1);
 
     glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &VP[0][0]);
     glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &logo3d2->Model[0][0]);
     glUniformMatrix4fv(ViewID, 1, GL_FALSE, &View[0][0]);
 
 
+    glUniform1i(locTextureMap0,0);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D,logo3d2->tex_diffuse);
+
+
     logo3d2->drawMesh();
 
+    for(int k=0;k<5;k++){
+    for(int j=0;j<5;j++){
+    for(int i=0;i<5;i++)
+    {
+        logo3d2->position.x=-i*2.0f;
+        logo3d2->position.z=j*2.0f;
+        logo3d2->position.y=-k*2.0f;
+        logo3d2->updateModel();
+
+        glUseProgram(programID2);
+        MatrixID = glGetUniformLocation(programID2, "VP");
+        ModelMatrixID = glGetUniformLocation(programID2, "M");
+        ViewID = glGetUniformLocation(programID2, "V");
+
+        GLuint locTextureMap0=glGetUniformLocation(programID2,"textureMap0");
 
 
 
+        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &VP[0][0]);
+        glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &logo3d2->Model[0][0]);
+        glUniformMatrix4fv(ViewID, 1, GL_FALSE, &View[0][0]);
+
+
+        glUniform1i(locTextureMap0,0);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D,logo3d2->tex_diffuse);
+
+
+        logo3d2->drawMesh();
+    }}}
 
 
 

@@ -13,6 +13,7 @@ class CMeshObject: public IMMObject
 
         void drawMesh();
         void updateModel();
+        void LoadTexture(const char * image_path, GLuint* texture);
 
         glm::mat4 Model;
         glm::vec3 position;
@@ -24,6 +25,7 @@ class CMeshObject: public IMMObject
         GLuint vertexbuffer;
         GLuint uvbuffer;
         GLuint normalbuffer;
+        GLuint tex_diffuse;
         char* meshName;
 
     private:

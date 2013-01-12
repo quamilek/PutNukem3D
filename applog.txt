@@ -1,8 +1,8 @@
-  Min :   Avg :   Max :   Time:   # : Profile Name (this loop: 5.69300 seconds)
+  Min :   Avg :   Max :   Time:   # : Profile Name (this loop: 197.71901 seconds)
 --------------------------------------------
-  2.3 :   2.3 :   2.3 :   0.1 :   1 : CRenderTask Start
-  0.3 :   0.3 :   0.3 :   0.0 :   1 : Kernel execute
-  0.2 :   0.2 :   0.2 :   0.0 : 341 :  InputTask update
- 99.5 :  99.5 :  99.5 :   5.7 : 341 :  RenderTask Update
+  0.1 :   0.1 :   0.1 :   0.1 :   1 : CRenderTask Start
+  0.2 :   0.2 :   0.2 :   0.4 :   1 : Kernel execute
+  0.0 :   0.0 :   0.0 :   0.1 : 651 :  InputTask update
+ 99.8 :  99.8 :  99.8 : 197.3 : 651 :  RenderTask Update
 
 

@@ -37,13 +37,19 @@
 	<File name="MeshManager.h" open="0" top="0" tabpos="8">
 		<Cursor position="66" topLine="0" />
 	</File>
-	<File name="MeshObject.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="70" topLine="0" />
+	<File name="MeshObject.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="291" topLine="0" />
 	</File>
-	<File name="MeshObject.h" open="1" top="0" tabpos="4">
-		<Cursor position="108" topLine="0" />
+	<File name="MeshObject.h" open="1" top="0" tabpos="6">
+		<Cursor position="359" topLine="2" />
 	</File>
-	<File name="ObjLoader.cpp" open="1" top="0" tabpos="6">
+	<File name="NewFShader.fragmentshader" open="1" top="0" tabpos="4">
+		<Cursor position="1270" topLine="7" />
+	</File>
+	<File name="NewVShader.vertexshader" open="1" top="1" tabpos="3">
+		<Cursor position="1114" topLine="12" />
+	</File>
+	<File name="ObjLoader.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="2598" topLine="45" />
 	</File>
 	<File name="ObjLoader.h" open="0" top="0" tabpos="5">
@@ -56,10 +62,10 @@
 		<Cursor position="546" topLine="0" />
 	</File>
 	<File name="RenderTask.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="7807" topLine="211" />
+		<Cursor position="8522" topLine="317" />
 	</File>
-	<File name="RenderTask.h" open="1" top="1" tabpos="1">
-		<Cursor position="1198" topLine="16" />
+	<File name="RenderTask.h" open="1" top="0" tabpos="1">
+		<Cursor position="1116" topLine="2" />
 	</File>
 	<File name="Settings.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="613" topLine="86" />
@@ -68,10 +74,10 @@
 		<Cursor position="604" topLine="0" />
 	</File>
 	<File name="SimpleFragmentShader.fragmentshader" open="0" top="0" tabpos="3">
-		<Cursor position="503" topLine="0" />
+		<Cursor position="695" topLine="0" />
 	</File>
-	<File name="SimpleVertexShader.vertexshader" open="1" top="0" tabpos="5">
-		<Cursor position="231" topLine="0" />
+	<File name="SimpleVertexShader.vertexshader" open="0" top="0" tabpos="5">
+		<Cursor position="518" topLine="0" />
 	</File>
 	<File name="SoundTask.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="398" topLine="0" />
@@ -82,7 +88,7 @@
 	<File name="VideoUpdate.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="792" topLine="28" />
 	</File>
-	<File name="VideoUpdate.h" open="1" top="0" tabpos="7">
+	<File name="VideoUpdate.h" open="0" top="0" tabpos="7">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="engine.h" open="0" top="0" tabpos="3">
@@ -103,10 +109,10 @@
 	<File name="misc.h" open="0" top="0" tabpos="6">
 		<Cursor position="795" topLine="15" />
 	</File>
-	<File name="mmanager.cpp" open="1" top="0" tabpos="9">
+	<File name="mmanager.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="197" topLine="0" />
 	</File>
-	<File name="mmanager.h" open="1" top="0" tabpos="12">
+	<File name="mmanager.h" open="0" top="0" tabpos="12">
 		<Cursor position="890" topLine="25" />
 	</File>
 	<File name="profiler.cpp" open="0" top="0" tabpos="5">
@@ -117,5 +123,11 @@
 	</File>
 	<File name="singleton.h" open="0" top="0" tabpos="6">
 		<Cursor position="163" topLine="5" />
+	</File>
+	<File name="sunFshader.fs" open="0" top="0" tabpos="0">
+		<Cursor position="80" topLine="0" />
+	</File>
+	<File name="sunVshader.vs" open="0" top="0" tabpos="0">
+		<Cursor position="214" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
