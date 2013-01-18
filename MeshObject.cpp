@@ -51,11 +51,21 @@ void CMeshObject::drawMesh()
     glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE,0,(void*)0);
 
+    glEnableVertexAttribArray(3);
+    glBindBuffer(GL_ARRAY_BUFFER, tangentbuffer);
+    glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE,0,(void*)0);
+
+    glEnableVertexAttribArray(4);
+    glBindBuffer(GL_ARRAY_BUFFER, bitangentbuffer);
+    glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE,0,(void*)0);
+
     glDrawArrays(GL_TRIANGLES, 0, vertexbuffersize); // Starting from vertex 0; 3 vertices total -> 1 triangle
 
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
     glDisableVertexAttribArray(2);
+    glDisableVertexAttribArray(3);
+    glDisableVertexAttribArray(4);
 
 }//drawMesh()
 
@@ -89,6 +99,8 @@ void CMeshObject::LoadObj(std::string filename)
     std::vector<glm::vec2> uv_buffer_data;
     std::vector<glm::vec3> normal_buffer_data;
 
+    std::vector<glm::vec3>  tangent_buffer_data;
+    std::vector<glm::vec3>  bitangent_buffer_data;
 
     filename+=".obj";
 
@@ -141,6 +153,8 @@ void CMeshObject::LoadObj(std::string filename)
             }
     }
 
+
+
     for(int i=0;i<vertex_ind.size();i++)                    //pêtla zapisuj¹ca dane do formatu wykorzystanego przy generacji buforów
     {
         for(int j=0;j<3;j++)
@@ -150,6 +164,68 @@ void CMeshObject::LoadObj(std::string filename)
             normal_buffer_data.push_back(normal_list[normal_ind[i][j]-1]);
         }
     }
+
+    for (int i=0;i<vertex_buffer_data.size();i+=3)
+    {
+        glm::vec3 &v0 = vertex_buffer_data[i+0];
+        glm::vec3 &v1 = vertex_buffer_data[i+1];
+        glm::vec3 &v2 = vertex_buffer_data[i+2];
+
+        glm::vec2 &uv0 = uv_buffer_data[i+0];
+        glm::vec2 &uv1 = uv_buffer_data[i+1];
+        glm::vec2 &uv2 = uv_buffer_data[i+2];
+
+
+
+        glm::vec3 deltaPos1 = v1-v0;
+        glm::vec3 deltaPos2 = v2-v0;
+
+        glm::vec2 deltaUV1 = uv1-uv0;
+        glm::vec2 deltaUV2 = uv2-uv0;
+
+        float r = 1.0f / (deltaUV1.x * deltaUV2.y - deltaUV1.y * deltaUV2.x);
+        glm::vec3 tangent = (deltaPos1 * deltaUV2.y   - deltaPos2 * deltaUV1.y)*r;
+        glm::vec3 bitangent = (deltaPos2 * deltaUV1.x   - deltaPos1 * deltaUV2.x)*r;
+
+        //tangent=glm::normalize(tangent);
+
+
+        tangent_buffer_data.push_back(tangent);
+        tangent_buffer_data.push_back(tangent);
+        tangent_buffer_data.push_back(tangent);
+
+        bitangent_buffer_data.push_back(bitangent);
+        bitangent_buffer_data.push_back(bitangent);
+        bitangent_buffer_data.push_back(bitangent);
+    }
+
+    for (int i=0;i<vertex_buffer_data.size();i++)
+    {
+        glm::vec3 &v0 = vertex_buffer_data[i];
+        glm::vec2 &uv0 = uv_buffer_data[i];
+        glm::vec3 &n0 = normal_buffer_data[i];
+        for (int j=i+1;j<vertex_buffer_data.size();j++)
+        {
+            glm::vec3 &v1 = vertex_buffer_data[j];
+            glm::vec2 &uv1 = uv_buffer_data[j];
+            glm::vec3 &n1 = normal_buffer_data[j];
+            if(v0==v1)
+            {
+                if(uv0==uv1)
+                {
+                    if(n0==n1)
+                    {
+                        tangent_buffer_data[i]=tangent_buffer_data[i]+tangent_buffer_data[j];
+                        tangent_buffer_data[j]=tangent_buffer_data[i];
+                        bitangent_buffer_data[i]=bitangent_buffer_data[i]+bitangent_buffer_data[j];
+                        bitangent_buffer_data[j]=bitangent_buffer_data[i];
+                    }
+                }
+            }
+        }
+    }
+
+
 
     glGenVertexArrays(1, &VertexArrayID);                 //w³asciwa generacja buforow wykorzystanych przy rysowania VAO
 
@@ -165,10 +241,17 @@ void CMeshObject::LoadObj(std::string filename)
 	glBindBuffer(GL_ARRAY_BUFFER,uvbuffer);
 	glBufferData(GL_ARRAY_BUFFER,uv_buffer_data.size()*sizeof(glm::vec2),&uv_buffer_data[0],GL_STATIC_DRAW);
 
-
 	glGenBuffers(1,&normalbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
 	glBufferData(GL_ARRAY_BUFFER,normal_buffer_data.size()*sizeof(glm::vec3),&normal_buffer_data[0],GL_STATIC_DRAW);
+
+	glGenBuffers(1,&tangentbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, tangentbuffer);
+	glBufferData(GL_ARRAY_BUFFER,tangent_buffer_data.size()*sizeof(glm::vec3),&tangent_buffer_data[0],GL_STATIC_DRAW);
+
+	glGenBuffers(1,&bitangentbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, bitangentbuffer);
+	glBufferData(GL_ARRAY_BUFFER,bitangent_buffer_data.size()*sizeof(glm::vec3),&bitangent_buffer_data[0],GL_STATIC_DRAW);
 
 
 }//LoadObj()

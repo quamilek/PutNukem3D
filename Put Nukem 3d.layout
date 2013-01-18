@@ -38,16 +38,16 @@
 		<Cursor position="66" topLine="0" />
 	</File>
 	<File name="MeshObject.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="291" topLine="0" />
+		<Cursor position="6325" topLine="178" />
 	</File>
 	<File name="MeshObject.h" open="1" top="0" tabpos="6">
-		<Cursor position="359" topLine="2" />
+		<Cursor position="920" topLine="18" />
 	</File>
-	<File name="NewFShader.fragmentshader" open="1" top="0" tabpos="4">
-		<Cursor position="1270" topLine="7" />
+	<File name="NewFShader.fragmentshader" open="1" top="1" tabpos="4">
+		<Cursor position="1681" topLine="41" />
 	</File>
-	<File name="NewVShader.vertexshader" open="1" top="1" tabpos="3">
-		<Cursor position="1114" topLine="12" />
+	<File name="NewVShader.vertexshader" open="1" top="0" tabpos="3">
+		<Cursor position="592" topLine="0" />
 	</File>
 	<File name="ObjLoader.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="2598" topLine="45" />
@@ -62,10 +62,10 @@
 		<Cursor position="546" topLine="0" />
 	</File>
 	<File name="RenderTask.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="8522" topLine="317" />
+		<Cursor position="11337" topLine="339" />
 	</File>
 	<File name="RenderTask.h" open="1" top="0" tabpos="1">
-		<Cursor position="1116" topLine="2" />
+		<Cursor position="787" topLine="20" />
 	</File>
 	<File name="Settings.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="613" topLine="86" />

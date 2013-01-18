@@ -22,10 +22,17 @@ class CMeshObject: public IMMObject
 
         GLuint VertexArrayID;
         GLuint vertexbuffersize;
+
         GLuint vertexbuffer;
         GLuint uvbuffer;
         GLuint normalbuffer;
+        GLuint tangentbuffer;
+        GLuint bitangentbuffer;
+
+
         GLuint tex_diffuse;
+        GLuint tex_specular;
+        GLuint tex_normal;
         char* meshName;
 
     private:

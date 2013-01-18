@@ -1,15 +1,25 @@
 #version 330 core
 in vec2 UV;
-in vec3 Normal_eyespace;
 in vec3 Eye_Direction;
 in vec3 LightDirection_eyespace;
+in vec3 Eye_Direction_tangentspace;
+in vec3 LightDirection_tangentspace;
 in vec3 interpolatedColor;
 in vec4 world_position;
+in vec3 Normal_eyespace;
+in vec3 Tangent_eyespace;
+in vec3 Tangent_modelspace;
 
 
 uniform vec4 LightLocation_world_space;
-uniform sampler2D textureMap0;
 
+uniform sampler2D textureMap_diffuse;
+uniform sampler2D textureMap_specular;
+uniform sampler2D textureMap_normal;
+
+uniform mat4 VP;
+uniform mat4 M;
+uniform mat4 V;
 
 // Ouput data
 out vec3 color;
@@ -18,39 +28,60 @@ out vec3 color;
 
 void main()
 {
-    vec4 texColor0=texture(textureMap0,UV);
-    vec3 LightColor = vec3(0.6,0.6,0.6);
-	float LightPower = 50.0f;
+    vec3 E = normalize(Eye_Direction_tangentspace);
+    vec2 texOffset = UV;
+    vec4 bumpPoint = texture2D(textureMap_specular,texOffset);
+    float height = 1.0;
 
-    vec3 MaterialDiffuseColor = interpolatedColor;
+    float step = height/20;
+    vec2 delta = vec2(-E.x, E.y)*0.025/ (E.z * 20);
+
+    while(bumpPoint.r < height)
+    {
+        height-=step;
+        texOffset += delta;
+        bumpPoint = texture2D(textureMap_specular,texOffset);
+    }
+
+
+
+
+    vec4 texColorD=texture2D(textureMap_diffuse,texOffset);
+    vec4 texColorS=texture2D(textureMap_specular,texOffset);
+    vec4 texColorN=texture2D(textureMap_normal,texOffset);
+    vec3 LightColor = vec3(0.6,0.6,0.6);
+	float LightPower = 30.0f;
+
+    vec3 MaterialDiffuseColor = texColorD.rgb;
 	vec3 MaterialAmbientColor = vec3(0,0,0.1) * MaterialDiffuseColor;
-	vec3 MaterialSpecularColor = texColor0.rgb;
+	vec3 MaterialSpecularColor = texColorS.rgb;
 
 	float distance = length( LightLocation_world_space - world_position );
 
-	vec3 n = normalize( Normal_eyespace );
-	vec3 l = normalize( LightDirection_eyespace );
+    vec3 n = normalize( texColorN.rgb*2.0-1.0) ;
+    //vec3 n = normalize( Normal_eyespace) ;
+
+	vec3 l = normalize( LightDirection_tangentspace );
 
 	float cosTheta = clamp( dot( n,l ), 0,1 );
 
 
 
 
-	vec3 E = normalize(Eye_Direction);
+
 
     vec3 R = normalize(reflect(-l,n));
     float cosAlpha = clamp( dot( E,R ), 0,1 );
 
-    if(cosAlpha>=clamp(texColor0.g,0.95,1))
-    {
-        cosAlpha=1.0;
-    }
 
 
 
-    color = (MaterialAmbientColor +
+
+    color = MaterialAmbientColor +
             MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance*distance) +
-			MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance))*texColor0.rgb;
+			MaterialSpecularColor * LightColor * LightPower * texColorS.rgb * pow(cosAlpha,5) / (distance*distance);
+
+   //color= vec3(texOffset.x,texOffset.y,1.0);
 
 
 

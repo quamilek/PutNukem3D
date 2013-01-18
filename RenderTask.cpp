@@ -206,7 +206,7 @@ bool CRenderTask::Start()
     glewInit();
 
     if(GLEW_VERSION_3_1) {
-        glClearColor(0.0f, 0.0f, 0.3f, 0.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     } else {
        glClearColor(0.0f, 0.0f, 0.3f, 0.0f);
     }
@@ -215,15 +215,22 @@ bool CRenderTask::Start()
     glDepthFunc(GL_LESS);
 
 
-    std::string modelName = "suzanne";
+    std::string modelName = "kostka";
     //logo3d = new CMeshObject(modelName);
     logo3d2 = new CMeshObject(modelName);
     std::string texName = modelName + "_diffuse.bmp";
     logo3d2->LoadTexture(texName.c_str(),&logo3d2->tex_diffuse);
+    texName = modelName + "_specular.bmp";
+    logo3d2->LoadTexture(texName.c_str(),&logo3d2->tex_specular);
+    texName = modelName + "_normal.bmp";
+    logo3d2->LoadTexture(texName.c_str(),&logo3d2->tex_normal);
 
     modelName = "sun";
     sun = new CMeshObject(modelName);
 
+    sun->position.y=5;
+    sun->position.x=1.0f;
+    sun->position.z=-2.0f;
 
     programID = LoadShaders( "SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader" );
     programID2 = LoadShaders("NewVShader.vertexshader","NewFShader.fragmentshader");
@@ -270,9 +277,7 @@ void CRenderTask::Update()
 
 
 
-    sun->position.y=5;
-    sun->position.x=1.0f;
-    sun->position.z=-2.0f;
+
 
     sun->updateModel();
 
@@ -301,7 +306,8 @@ void CRenderTask::Update()
     lightID1 = glGetUniformLocation(programID2,"LightLocation_world_space");
     GLuint locTextureMap0=glGetUniformLocation(programID2,"textureMap0");
 
-    glUniform4f(lightID1,1,5,-2,1);
+
+    glUniform4f(lightID1,sun->position.x,sun->position.y,sun->position.z,1);
 
     glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &VP[0][0]);
     glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &logo3d2->Model[0][0]);
@@ -319,8 +325,8 @@ void CRenderTask::Update()
     for(int j=0;j<5;j++){
     for(int i=0;i<5;i++)
     {
-        logo3d2->position.x=-i*2.0f;
-        logo3d2->position.z=j*2.0f;
+        logo3d2->position.x=-i*2.0f-2.0;
+        logo3d2->position.z=j*2.0-2.0f;
         logo3d2->position.y=-k*2.0f;
         logo3d2->updateModel();
 
@@ -329,7 +335,9 @@ void CRenderTask::Update()
         ModelMatrixID = glGetUniformLocation(programID2, "M");
         ViewID = glGetUniformLocation(programID2, "V");
 
-        GLuint locTextureMap0=glGetUniformLocation(programID2,"textureMap0");
+        locTextureMap0=glGetUniformLocation(programID2,"textureMap_diffuse");
+        locTextureMap1=glGetUniformLocation(programID2,"textureMap_specular");
+        locTextureMap2=glGetUniformLocation(programID2,"textureMap_normal");
 
 
 
@@ -338,9 +346,21 @@ void CRenderTask::Update()
         glUniformMatrix4fv(ViewID, 1, GL_FALSE, &View[0][0]);
 
 
-        glUniform1i(locTextureMap0,0);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,logo3d2->tex_diffuse);
+        glUniform1i(locTextureMap0,0);
+
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D,logo3d2->tex_specular);
+        glUniform1i(locTextureMap1,1);
+
+
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D,logo3d2->tex_normal);
+        glUniform1i(locTextureMap2,2);
+
+
 
 
         logo3d2->drawMesh();
@@ -352,7 +372,15 @@ void CRenderTask::Update()
 
 
 
-	if(CInputTask::mouseDown(SDL_BUTTON_LEFT))CKernel::GetSingleton().KillAllTasks();
+	//if(CInputTask::mouseDown(SDL_BUTTON_LEFT))CKernel::GetSingleton().KillAllTasks();
+    if(CInputTask::keyStillDown(SDLK_ESCAPE))CKernel::GetSingleton().KillAllTasks();
+    if(CInputTask::keyStillDown(SDLK_RIGHT))sun->position.x-=speed*0.2f;
+    if(CInputTask::keyStillDown(SDLK_LEFT))sun->position.x+=speed*0.2f;
+    if(CInputTask::keyStillDown(SDLK_UP))sun->position.y+=speed*0.2f;
+    if(CInputTask::keyStillDown(SDLK_DOWN))sun->position.y-=speed*0.2f;
+    if(CInputTask::keyStillDown(SDLK_w))sun->position.z+=speed*0.2f;
+    if(CInputTask::keyStillDown(SDLK_s))sun->position.z-=speed*0.2f;
+
 
 }
 

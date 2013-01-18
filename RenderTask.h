@@ -24,8 +24,9 @@ class CRenderTask : public ITask
         Uint32 getpixel( SDL_Surface *surface, int x, int y );
         void LoadTexture(const char * image_path, GLuint* texture);
         GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path);
-        GLuint Texture;
-        GLuint Texture2;
+        GLuint locTextureMap0;
+        GLuint locTextureMap1;
+        GLuint locTextureMap2;
 
         GLuint programID;
         GLuint programID2;
